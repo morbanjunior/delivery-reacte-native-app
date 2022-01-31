@@ -9,20 +9,16 @@ const HeaderTabs = () => {
   const [activeTab, setActiveTav] = useState("Delivery");
 
   return (  
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <HederButton name="Delivery"
-         btncolor="black" 
-         textcolor="white"
          activeTab={activeTab}
          setActiveTav={setActiveTav}
          />
         <HederButton name="Pick Up"
-         btncolor="white" 
-         textcolor="black" 
          activeTab={activeTab}
          setActiveTav={setActiveTav}
          />
-      </SafeAreaView>);
+      </View>);
 };
 
 export default HeaderTabs;
@@ -32,6 +28,6 @@ const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
       alignSelf:'center',
-      marginTop:30,
+     
     },
   });

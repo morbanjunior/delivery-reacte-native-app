@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const HederButton = ({name, btncolor, textcolor, activeTab, setActiveTav}) => {
+const HederButton = ({name, activeTab, setActiveTav}) => {
   return (
           <TouchableOpacity style={{
             paddingVertical: 6,
