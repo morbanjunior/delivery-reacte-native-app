@@ -6,12 +6,21 @@ import Categories from '../componets/categories/Categories'
 import RestaurantItem from '../componets/restaurantItem/RestaurantItem';
 import { localRestaurants } from '../../data/localRestaurants';
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getRestaurants } from '../../redux/action/restaurants';
 
-const YELP_API_KEY = "zTMzaK2l-oEmR7nXqBvXpD-kD3IVVSPXS91KoUoWT9IfwkfCmoRG_Sc5IHsTEnoN3cI7u03SHrFQz8U7vUK1qWf4HwIlmetiQaov3W_89TcQihTZ5brHxjzCkX4YXYx";
 
 const Home = () => {
+  const { restaurants } = useSelector((state) => state.restaurantReducer);
+  const dispatch = useDispatch();
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
-  const [city, setCity] = useState("San Francisco");
+  const [city, setCity] = useState("New York");
+
+useEffect(() => {
+  dispatch(getRestaurants(city));
+  setRestaurantData(restaurants.businesses);
+
+}, [restaurants,city]);
 
 
   return (
