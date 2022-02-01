@@ -20,11 +20,12 @@ const Home = () => {
   const [city, setCity] = useState("New York");
   const [activeTab, setActiveTab ] = useState("Delivery");
 
-//   const filterdata = restaurants.businesses.filter((business) => 
-//   business.transactions.includes(activeTab.toLowerCase()));
+
 
   useEffect(() => {
 //   dispatch(getRestaurants(city));
+//   setRestaurantData(restaurants.businesses.filter((business) => 
+//   business.transactions.includes(activeTab.toLowerCase())));
 
    setRestaurantData(localRestaurants.filter((rest) =>
    rest.transactions.includes(activeTab.toLocaleLowerCase())));
