@@ -4,19 +4,18 @@ import HederButton from './HederButton';
 
 
 
-const HeaderTabs = () => { 
+const HeaderTabs = ({activeTab, setActiveTab}) => { 
 
-  const [activeTab, setActiveTav] = useState("Delivery");
 
   return (  
       <View style={styles.container}>
         <HederButton name="Delivery"
          activeTab={activeTab}
-         setActiveTav={setActiveTav}
+         setActiveTav={setActiveTab}
          />
-        <HederButton name="Pick Up"
+        <HederButton name="PickUp"
          activeTab={activeTab}
-         setActiveTav={setActiveTav}
+         setActiveTav={setActiveTab}
          />
       </View>);
 };

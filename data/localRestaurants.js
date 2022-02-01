@@ -7,6 +7,7 @@ export const localRestaurants = [
       Price: "$$",
       review_count: 1244,
       rating: 4.5,
+      transactions: ["delivery"],
   
     },
     {
@@ -17,6 +18,7 @@ export const localRestaurants = [
       Price: "$$",
       review_count: 1244,
       rating: 4.0,
+      transactions: ["pickup"],
       
     },
     {
@@ -27,6 +29,7 @@ export const localRestaurants = [
       Price: "$$",
       review_count: 1244,
       rating: 2.5,
+      transactions: [ "delivery"],
       
     },
     {
@@ -37,6 +40,7 @@ export const localRestaurants = [
       Price: "$$",
       review_count: 1244,
       rating: 4.5,
+      transactions: ["delivery"],
       
     },
     {
@@ -47,6 +51,7 @@ export const localRestaurants = [
       Price: "$$",
       review_count: 1244,
       rating: 3.5,
+      transactions: ["pickup"],
       
     },
     

@@ -8,6 +8,8 @@ import { localRestaurants } from '../../data/localRestaurants';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getRestaurants } from '../../redux/action/restaurants';
+import { Divider } from 'react-native-elements/dist/divider/Divider';
+import BottonTabs from '../componets/bottomTabs/BottonTabs';
 
 
 
@@ -16,14 +18,18 @@ const Home = () => {
   const dispatch = useDispatch();
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
   const [city, setCity] = useState("New York");
+  const [activeTab, setActiveTab ] = useState("Delivery");
 
-useEffect(() => {
-  dispatch(getRestaurants(city));
-  
-  setRestaurantData(restaurants.businesses);
+//   const filterdata = restaurants.businesses.filter((business) => 
+//   business.transactions.includes(activeTab.toLowerCase()));
 
-}, [restaurants, city]);
+  useEffect(() => {
+//   dispatch(getRestaurants(city));
 
+   setRestaurantData(localRestaurants.filter((rest) =>
+   rest.transactions.includes(activeTab.toLocaleLowerCase())));
+
+  }, [city, activeTab]);
 
 
   return (
@@ -37,13 +43,15 @@ useEffect(() => {
         backgroundColor: '#fff',
         padding: 10,
       }}>
-        <HeaderTabs/>
+        <HeaderTabs setActiveTab={setActiveTab} activeTab={activeTab}/>
         <SearchBar setCity={setCity} />
        </View>
        <ScrollView showsVerticalScrollIndicator={false}>
          <Categories/>
          <RestaurantItem restaurantData={restaurantData} />
        </ScrollView>
+       <Divider width={1}/>
+       <BottonTabs/>
       </SafeAreaView>
   
 
