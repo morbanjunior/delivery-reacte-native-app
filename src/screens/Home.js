@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getRestaurants } from '../../redux/action/restaurants';
 
 
+
 const Home = () => {
   const { restaurants } = useSelector((state) => state.restaurantReducer);
   const dispatch = useDispatch();
@@ -18,9 +19,11 @@ const Home = () => {
 
 useEffect(() => {
   dispatch(getRestaurants(city));
+  
   setRestaurantData(restaurants.businesses);
 
-}, [restaurants,city]);
+}, [restaurants, city]);
+
 
 
   return (
@@ -28,14 +31,14 @@ useEffect(() => {
     <SafeAreaView style={{
         backgroundColor: '#eee',
         flex: 1,
-       
+      
       }}>
       <View style={{
         backgroundColor: '#fff',
         padding: 10,
       }}>
         <HeaderTabs/>
-        <SearchBar/>
+        <SearchBar setCity={setCity} />
        </View>
        <ScrollView showsVerticalScrollIndicator={false}>
          <Categories/>
@@ -43,6 +46,7 @@ useEffect(() => {
        </ScrollView>
       </SafeAreaView>
   
+
   )
 };
 

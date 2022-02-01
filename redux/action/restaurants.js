@@ -23,10 +23,12 @@ export const getRestaurants = (city) => {
                     payload: json
                 });
             } else {
+                
                 console.log('Unable to fetch!');
             }
         }
     } catch (error) {
+        
         console.log(error);
     }
 }
