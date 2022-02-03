@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import { StyleSheet, View} from 'react-native';
 import HederButton from './HederButton';
 
 
