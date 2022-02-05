@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/screens/Home';
 import RestaurantDetails from './src/screens/RestaurantDetails';
+import OrderCompleted from './src/screens/OrderCompleted';
 
 export default function navigation() {
 
@@ -17,6 +18,7 @@ export default function navigation() {
       <Stack.Navigator initialRouteName="Home" screenOption={screenOption}>
           <Stack.Screen name="Home" component={Home}/>
           <Stack.Screen name="Restaurant Details" component={RestaurantDetails}/>
+          <Stack.Screen name="Order completed"  component={OrderCompleted}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

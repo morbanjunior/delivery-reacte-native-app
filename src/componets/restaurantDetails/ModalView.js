@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Modal, StyleSheet} from 'react-native';
 import OrderItems from './OrderItems';
 export const CheckoutModelContent =
-    ({setModelVisible, modelVisible, restaurantName, items, totalUSD, total}) =>{
+    ({ modelVisible, restaurantName, items, totalUSD, total, addOrderToFireBase}) =>{
     return (
         <>
          <Modal 
@@ -19,7 +19,7 @@ export const CheckoutModelContent =
                     ))
                 }
                 <View style={styles.subtotalContainer}>
-                    <Text style={styles.subtotalText}>Subtotal</Text>
+                    <Text style={styles.subtotalText}>Sub-total</Text>
                     <Text>{totalUSD}</Text>
                 </View>
                 <View style={{
@@ -35,7 +35,7 @@ export const CheckoutModelContent =
                     width: 300, 
                     position: 'relative',
                 }}
-                onPress={()=>setModelVisible(false)}
+                onPress={()=>{addOrderToFireBase()}}
                 >
                     <Text style={{
                         color: "white",
@@ -61,6 +61,7 @@ export const CheckoutModelContent =
 
   const styles = StyleSheet.create({
         modalContainer: {
+            
             flex: 1,
             justifyContent: 'flex-end',
             backgroundColor: "rgba(0,0,0,0.7)"

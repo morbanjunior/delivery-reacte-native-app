@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, Modal} from 'react-native';
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux';
 
-export default function ViewCart({ navigation, setModelVisible, total, totalUSD }) {
+export default function ViewCart({ setModelVisible, total, totalUSD }) {
+
 
   return (
     <>
